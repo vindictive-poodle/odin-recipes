@@ -14,9 +14,9 @@ else
   set shortmess=aoO
 endif
 badd +1 index.html
-badd +29 recipes/darjeeling.html
-badd +30 recipes/earlgrey.html
-badd +43 styles/style.css
+badd +9 recipes/darjeeling.html
+badd +9 recipes/earlgrey.html
+badd +1 styles/style.css
 badd +98 ~/.config/nvim/lua/user/keymaps.lua
 badd +1 ~/Documents/odin-recipes/recipes/puer.html
 badd +28 recipes/white.html
@@ -91,11 +91,11 @@ keepjumps 38
 normal! 017|
 wincmd w
 argglobal
-if bufexists(fnamemodify("recipes/darjeeling.html", ":p")) | buffer recipes/darjeeling.html | else | edit recipes/darjeeling.html | endif
+if bufexists(fnamemodify("recipes/white.html", ":p")) | buffer recipes/white.html | else | edit recipes/white.html | endif
 if &buftype ==# 'terminal'
-  silent file recipes/darjeeling.html
+  silent file recipes/white.html
 endif
-balt index.html
+balt ~/Documents/odin-recipes/recipes/puer.html
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -106,14 +106,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 29 - ((28 * winheight(0) + 40) / 80)
+let s:l = 9 - ((8 * winheight(0) + 40) / 80)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 29
+keepjumps 9
 normal! 05|
 wincmd w
-3wincmd w
+2wincmd w
 exe '1resize ' . ((&lines * 40 + 41) / 83)
 exe 'vert 1resize ' . ((&columns * 91 + 91) / 183)
 exe '2resize ' . ((&lines * 39 + 41) / 83)
